@@ -1,6 +1,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./auth.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const msg = document.getElementById("msg");
+    if (!window.ElectricAuth) {
+      msg.textContent = "ERROR: auth.js did not load. Check that auth.js exists in the repo root.";
+    } else {
+      msg.textContent = "Ready.";
+    }
+  });
+</script>
+
 <form id="signupForm">
   <label>Email</label>
   <input id="email" type="email" required />
